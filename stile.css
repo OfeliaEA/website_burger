@@ -1,0 +1,276 @@
+/* ******************** reset ****************** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ********************** fonts ************************* */
+
+@font-face {
+  font-family: "franivaregular";
+  src:
+    url(./fonts/franiva-webfont.woff2) format("woff2"),
+    url(./fonts/franiva-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "filionregular";
+  src:
+    url(./fonts/filion-webfont.woff2) format("woff2"),
+    url(./fonts/filion-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ********************** generalt ************************* */
+h1 {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #e04adb;
+  font-size: 2rem;
+  margin-block: 1rem 0.7rem;
+  padding-inline: 6px;
+}
+h2 {
+  font-family: "franivaregular";
+  color: #cd64c2;
+  padding-inline: 6px;
+  margin-block: 1rem 0.5rem;
+}
+
+p {
+  color: #130e1d;
+  margin-block: 0.5rem 0.5rem;
+  padding-inline: 6px;
+}
+
+.pclink {
+  border: 1px solid;
+  padding-inline: 2rem;
+  padding-block: 0.2rem;
+  color: rgb(45, 29, 192);
+  background-color: #f2e3f1;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-left: 0.4rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+  border-radius: 20px;
+}
+
+h3 {
+  padding-inline: 6px;
+  margin-block: 1rem 0.5rem;
+}
+
+dd {
+  padding-inline: 6px;
+  margin-block: 0.2rem 1rem;
+}
+dt {
+  padding-inline: 6px;
+  font-weight: bold;
+}
+
+footer {
+  font-family: "filionregular";
+  background-color: #f0b6eb;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+body {
+  background-color: rgb(255, 252, 241);
+}
+
+ul {
+  padding-inline: 6px;
+  margin-block: 0.2rem 1rem;
+  margin-left: 15px;
+}
+
+#udseende {
+  margin-top: 1.5rem;
+}
+
+main {
+  padding-inline: 1rem;
+  margin-block: 1rem;
+}
+
+/* *********************************** menu *********************************** */
+
+/* header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0b6eb;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @media (width < 700px) {
+    display: none;
+  }
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  color: red;
+}
+
+@media (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+} */
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0b6eb;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+nav {
+  /* Desktop */
+  display: flex;
+  align-items: center;
+
+  /* Mobilsite */
+  @media (width < 800px) {
+    &.active .menu {
+      display: block;
+      background-color: #ffffff;
+      position: absolute;
+      top: 94px;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    &.active .menu li {
+      margin: 10px 20px;
+    }
+
+    &.active .menu a {
+      font-size: 24px;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-right: 20px;
+  }
+
+  li:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    display: block;
+    padding: 10px;
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: end;
+    :hover {
+      color: #ff0000;
+    }
+  }
+  @media (width < 800px) {
+    display: none;
+  }
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+
+  .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333333;
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+
+  @media (width < 800px) {
+    display: block;
+    background-color: transparent;
+    border: 0;
+
+    &.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    &.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    &.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+  }
+}
